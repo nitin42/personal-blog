@@ -26,7 +26,7 @@ export const NavigationMenu = () => {
             </Link>
           </li>
           <li className="pr-4">
-            <Link className="text-lg" to="/blog" renderGatsbyLink>
+            <Link className="text-lg" to="/about" renderGatsbyLink>
               About
             </Link>
           </li>
