@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 
 import SEO from "./seo"
@@ -12,12 +12,15 @@ import { Text } from "./Text"
 import { Footer } from "./Footer"
 import { Link } from "./Link"
 import { NavigationMenu } from "./NavigationMenu"
+import { Card } from "./Card"
 
 const mdxComponents = {
   Container,
   Heading,
   Text,
+  GatsbyLink,
   Link,
+  Card,
 }
 
 const Layout = ({ children, showNavigation = true }) => (

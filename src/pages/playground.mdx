@@ -4,4 +4,19 @@ title: Playground
 
 import Layout from "../components/layout"
 
-<Layout />
+import moireImage from "../images/Moire/mSix.png"
+
+<Layout>
+  <Container
+    centerAlign
+    className="grid grid-cols-3 justify-center items-center gap-5"
+  >
+    <GatsbyLink to="/playground/moire">
+      <Card
+        imageUrl={moireImage}
+        heading="Moire pattern"
+        description="Learn about Moire pattern."
+      />
+    </GatsbyLink>
+  </Container>
+</Layout>

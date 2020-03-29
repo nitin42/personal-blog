@@ -17,3 +17,12 @@ body {
 .grid-auto-fit {
   grid-template-columns: repeat(auto-fit, 300px);
 }
+
+.drop-cap {
+  float: left;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
