@@ -32,6 +32,7 @@ export const NavigationMenu = () => {
           </li>
         </ul>
       </nav>
+      <div className="mt-4 bg-gray-800 w-full h-1" />
     </FlexContainer>
   )
 }
