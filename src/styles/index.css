@@ -13,3 +13,7 @@ body {
   background-color: #f7fafc;
   font-family: "Open Sans", Fallback, sans-serif;
 }
+
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, 300px);
+}

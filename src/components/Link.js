@@ -9,7 +9,7 @@ export const Link = ({
   renderGatsbyLink,
   externalLink,
 }) => {
-  const linkStyles = `underline text-blue-400 ${className}`
+  const linkStyles = `underline ${className}`
 
   const externalLinkAttributes = {
     target: "__blank",
@@ -21,6 +21,7 @@ export const Link = ({
       <GatsbyLink
         className={linkStyles}
         to={to}
+        activeClassName="text-blue-400"
         {...(externalLink ? { ...externalLinkAttributes } : null)}
       >
         {children}
@@ -31,7 +32,7 @@ export const Link = ({
   return (
     <a
       href={to}
-      className={linkStyles}
+      className={`${linkStyles} text-blue-400`}
       {...(externalLink ? { ...externalLinkAttributes } : null)}
     >
       {children}
