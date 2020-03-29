@@ -26,7 +26,13 @@ const Sketches = props => {
         className="pt-10 grid grid-auto-fit gap-5 justify-center items-center"
       >
         <FlexContainer direction="column" centerAlign>
-          <Heading>Sketches</Heading>
+          <Heading
+            disableDefaultSize
+            level="h2"
+            className="lg:text-5xl md:text-3xl text-3xl"
+          >
+            Sketches
+          </Heading>
           <i>Experiments and exploratory work</i>
         </FlexContainer>
         {artworks.map(({ data, artwork }, key) => {
