@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Container, FlexContainer } from "../components/Container"
 import { Heading } from "../components/Heading"
-import { NavigationMenu } from "../components/NavigationMenu"
 import Img from "gatsby-image"
 
 import { getArtworkBorderStyles } from "../helpers"
@@ -22,11 +21,6 @@ const Sketches = props => {
 
   return (
     <Layout>
-      <FlexContainer centerAlign direction="column">
-        <Heading>Form meets code</Heading>
-        <div className="bg-gray-200 w-full" style={{ height: "1.5px" }} />
-        <NavigationMenu />
-      </FlexContainer>
       <Container
         centerAlign
         className="pt-10 grid grid-auto-fit gap-5 justify-center items-center"

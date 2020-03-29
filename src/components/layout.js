@@ -6,11 +6,12 @@ import SEO from "./seo"
 
 import "../styles/index.css"
 
-import { Container } from "../components/Container"
-import { Heading } from "../components/Heading"
-import { Text } from "../components/Text"
-import { Footer } from "../components/Footer"
-import { Link } from "../components/Link"
+import { Container } from "./Container"
+import { Heading } from "./Heading"
+import { Text } from "./Text"
+import { Footer } from "./Footer"
+import { Link } from "./Link"
+import { NavigationMenu } from "./NavigationMenu"
 
 const mdxComponents = {
   Container,
@@ -19,7 +20,7 @@ const mdxComponents = {
   Link,
 }
 
-const Layout = ({ children }) => (
+const Layout = ({ children, showNavigation = true }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -33,6 +34,7 @@ const Layout = ({ children }) => (
     render={() => (
       <MDXProvider components={mdxComponents}>
         <SEO />
+        {showNavigation && <NavigationMenu />}
         <main>{children}</main>
         <Container
           centerAlign
