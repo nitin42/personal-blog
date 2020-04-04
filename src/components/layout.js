@@ -26,7 +26,22 @@ const mdxComponents = {
       {props.children}
     </Link>
   ),
-  h1: props => <Heading level="h1">{props.children}</Heading>,
+  h1: props => (
+    <Heading id={props.id} level="h1" style={{ position: "relative" }}>
+      {props.children}
+    </Heading>
+  ),
+  h2: props => (
+    <Heading
+      disableDefaultSize
+      className="text-3xl"
+      id={props.id}
+      level="h2"
+      style={{ position: "relative" }}
+    >
+      {props.children}
+    </Heading>
+  ),
   p: props => <Text>{props.children}</Text>,
 }
 

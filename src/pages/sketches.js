@@ -8,9 +8,16 @@ import Img from "gatsby-image"
 
 import { getArtworkBorderStyles } from "../helpers"
 
-export const Artwork = ({ imageData, borderStyles }) => (
+const Image = ({ imageData, borderStyles }) => (
   <Img fixed={imageData} alt="" style={{ ...borderStyles }} />
 )
+
+const Artworks = ({ items }) =>
+  items.map(({ data, artwork }, key) => {
+    const borderStyles = getArtworkBorderStyles(artwork)
+
+    return <Image imageData={data} borderStyles={borderStyles} key={key} />
+  })
 
 const Sketches = props => {
   const artworkNames = Object.keys(props.data)
@@ -35,13 +42,7 @@ const Sketches = props => {
           </Heading>
           <i>Experiments and exploratory work</i>
         </FlexContainer>
-        {artworks.map(({ data, artwork }, key) => {
-          const borderStyles = getArtworkBorderStyles(artwork)
-
-          return (
-            <Artwork imageData={data} borderStyles={borderStyles} key={key} />
-          )
-        })}
+        <Artworks items={artworks} />
       </Container>
     </Layout>
   )

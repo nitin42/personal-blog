@@ -26,3 +26,30 @@ body {
   padding-right: 8px;
   padding-left: 3px;
 }
+
+h2:hover > .anchor svg {
+  visibility: visible;
+}
+
+h1:hover > .anchor svg {
+  visibility: visible;
+}
+
+h3:hover > .anchor svg {
+  visibility: visible;
+}
+
+h1 .anchor svg,
+h2 .anchor svg,
+h3 .anchor svg {
+  display: inline;
+  visibility: hidden;
+}
+
+.anchor.before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  padding-right: 4px;
+}

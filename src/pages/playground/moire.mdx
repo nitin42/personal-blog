@@ -2,20 +2,60 @@
 title: Moire pattern
 ---
 
-import Layout from "../../components/layout"
+import PlaygroundLayout from "../../layouts/playground-layout"
 
-<Layout>
-  <Container
-    centerAlign
-    className="grid grid-cols-2 gap-12 justify-center items-center"
-  >
-    <Container className="w-11/12">
-      <Heading level="h2">Moire pattern</Heading>
-    </Container>
-    <Container>
-      <Heading level="h3" className="text-xl" disableDefaultSize>
-        On this page
-      </Heading>
-    </Container>
-  </Container>
-</Layout>
+export default PlaygroundLayout
+
+<div class="pt-5 pb-5">
+  <Heading level="h2" className="text-center text-5xl" disableDefaultSize>
+    Moire pattern
+  </Heading>
+</div>
+
+## Introduction
+
+Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
+
+Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
+overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
+
+## Examples
+
+Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
+
+Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
+overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
+
+## Interactive canvas
+
+Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
+
+Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
+overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
+
+## Properties
+
+Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
+
+Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
+overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
+
+## Resources
+
+Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
+
+Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
+overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
+
+export const pageQuery = graphql`
+  {
+    file(sourceInstanceName: { eq: "playground" }, name: { eq: "moire" }) {
+      childMdx {
+        headings {
+          depth
+          value
+        }
+      }
+    }
+  }
+`
