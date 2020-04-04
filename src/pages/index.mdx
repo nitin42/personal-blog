@@ -2,29 +2,20 @@
 title: Home
 ---
 
-import Layout from "../components/layout"
+import HomePageLayout from "../layouts/home-page-layout"
 
-<Layout showNavigation={false}>
-  <Container centerAlign className="lg:w-6/12 md:w-3/5 pt-10 pr-5 pl-5 sm:3/5">
-    <Heading as="h1" className="pb-2">
-      Form meets code
-    </Heading>
-    <Text>
-      Hi, I am Nitin Tulswani. I am a web developer currently working at <Link to="https://bulb.co.uk/" externalLink>Bulb
-      Energy</Link> based in London. I plan to use this space as a medium to share all
-      of my learnings, projects and the creative process.
-    </Text>
-    <Text>
-      I do a lot of creative coding, and love working with Processing. You can
-      see my growing collection of sketches <Link to="/sketches" renderGatsbyLink className="text-blue-400">here</Link>.
-    </Text>
-    <Text>
-      I take a lot of photos. Some of my favourites are hosted <Link to="https://unsplash.com/@nitintulswani" externalLink>on Unsplash</Link>.
-    </Text>
-    <Text>
-      You can get in touch with me on Twitter <Link to="https://twitter.com/NTulswani" externalLink>@NTulswani</Link> where I mostly share
-      things about my work, or reach out through <Link to="mailto:tulswani19@gmail.com">email</Link>.
-    </Text>
-    <Text>Thank you for visiting!</Text>
-  </Container>
-</Layout>
+export default HomePageLayout
+
+# Form meets code
+
+Hi, I am Nitin Tulswani. I am a web developer currently working at <ExternalLink href="https://bulb.co.uk/"> Bulb Energy</ExternalLink>
+based in London. I plan to use this space as a medium to share all of my
+learnings, projects and the creative process.
+
+I do a lot of creative coding, and love working with Processing. You can see my growing collection of sketches <Link to="/sketches" renderGatsbyLink className="text-blue-400">here</Link>.
+
+I take a lot of photos. Some of my favourites are hosted <ExternalLink href="https://unsplash.com/@nitintulswani">on Unsplash</ExternalLink>.
+
+You can get in touch with me on Twitter <ExternalLink href="https://twitter.com/NTulswani">@NTulswani</ExternalLink> where I mostly share things about my work, or reach out through <Link to="mailto:tulswani19@gmail.com">email</Link>.
+
+Thank you for visiting!

@@ -4,4 +4,18 @@ title: Moire pattern
 
 import Layout from "../../components/layout"
 
-<Layout />
+<Layout>
+  <Container
+    centerAlign
+    className="grid grid-cols-2 gap-12 justify-center items-center"
+  >
+    <Container className="w-11/12">
+      <Heading level="h2">Moire pattern</Heading>
+    </Container>
+    <Container>
+      <Heading level="h3" className="text-xl" disableDefaultSize>
+        On this page
+      </Heading>
+    </Container>
+  </Container>
+</Layout>

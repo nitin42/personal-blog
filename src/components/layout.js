@@ -21,6 +21,13 @@ const mdxComponents = {
   GatsbyLink,
   Link,
   Card,
+  ExternalLink: props => (
+    <Link to={props.href} externalLink>
+      {props.children}
+    </Link>
+  ),
+  h1: props => <Heading level="h1">{props.children}</Heading>,
+  p: props => <Text>{props.children}</Text>,
 }
 
 const Layout = ({ children, showNavigation = true }) => (
