@@ -21,7 +21,12 @@ export const NavigationMenu = () => {
             </Link>
           </li>
           <li className="pr-4">
-            <Link className="text-lg" to="/playground" renderGatsbyLink>
+            <Link
+              className="text-lg"
+              to="/playground"
+              renderGatsbyLink
+              partiallyActive={true}
+            >
               Playground
             </Link>
           </li>

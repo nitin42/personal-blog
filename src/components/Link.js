@@ -8,6 +8,7 @@ export const Link = ({
   className,
   renderGatsbyLink,
   externalLink,
+  partiallyActive,
 }) => {
   const linkStyles = `underline ${className}`
 
@@ -21,6 +22,7 @@ export const Link = ({
       <GatsbyLink
         className={linkStyles}
         to={to}
+        partiallyActive={partiallyActive}
         activeClassName="text-blue-400"
         {...(externalLink ? { ...externalLinkAttributes } : null)}
       >
