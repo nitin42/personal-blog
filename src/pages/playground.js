@@ -17,7 +17,7 @@ export default () => {
           <Card
             imageUrl={moireImage}
             heading="Moire pattern"
-            description="Learn about Moire pattern."
+            description="An interactive visualisation explaining the Moire pattern."
           />
         </GatsbyLink>
       </Container>

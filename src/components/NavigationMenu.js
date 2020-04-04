@@ -30,11 +30,6 @@ export const NavigationMenu = () => {
               Playground
             </Link>
           </li>
-          <li className="pr-4">
-            <Link className="text-lg" to="/about" renderGatsbyLink>
-              About
-            </Link>
-          </li>
         </ul>
       </nav>
       <div className="mt-4 bg-gray-800 w-full h-1" />

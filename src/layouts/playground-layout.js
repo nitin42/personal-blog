@@ -10,9 +10,9 @@ export default ({ children, data }) => {
     <Layout>
       <Container
         centerAlign
-        className="grid gap-10 grid-cols-playg-content justify-center"
+        className="grid gap-10 lg:grid-cols-playg-content md:grid-cols-playg-content sm:grid-cols-1 justify-center"
       >
-        <Container>{children}</Container>
+        <Container className="p-5 md:p-2 lg:p-0">{children}</Container>
         <div className="bg-gray-200" style={{ width: "2.5px" }} />
         <TableOfContents contents={contents} pageTitle={data.file.name} />
       </Container>
