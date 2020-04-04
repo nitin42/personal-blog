@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 
 import moireImage from "../images/Moire/mSix.png"
 import { Container } from "../components/Container"
-import { Link as GatsbyLink, graphql } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 import { Card } from "../components/Card"
 
 export default () => {

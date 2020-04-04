@@ -50,11 +50,9 @@ overlaid onto each other. Alongside, there is a list of properties that determin
 export const pageQuery = graphql`
   {
     file(sourceInstanceName: { eq: "playground" }, name: { eq: "moire" }) {
+      name
       childMdx {
-        headings {
-          depth
-          value
-        }
+        tableOfContents
       }
     }
   }
