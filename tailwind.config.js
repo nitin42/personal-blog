@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        "playg-content": "2fr 5px 1fr",
+        "playg-content": "3fr 5px 1fr",
       },
     },
   },

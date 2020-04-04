@@ -4,6 +4,8 @@ title: Moire pattern
 
 import PlaygroundLayout from "../../layouts/playground-layout"
 
+import { MoirePattern } from "../../artworks/moire"
+
 export default PlaygroundLayout
 
 <div class="pt-5 pb-5">
@@ -28,24 +30,22 @@ overlaid onto each other. Alongside, there is a list of properties that determin
 
 ## Interactive canvas
 
-Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
+Below is an interactive canvas that shows four instances of <a className="info-link" href="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</a> overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
 
-Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
-overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
+<div className="pt-8 p-5">
+  <MoirePattern
+    id="moire-pattern"
+    stroke={255}
+    size={6}
+    strokeWeight={1}
+    height={400}
+    width={400}
+  />
+</div>
 
 ## Properties
 
-Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
-
-Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
-overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
-
 ## Resources
-
-Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
-
-Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
-overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
 
 export const pageQuery = graphql`
   {
