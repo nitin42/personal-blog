@@ -1,7 +1,31 @@
+import React, { useState } from "react"
+import Slider from "react-input-slider"
 import { createP5Sketch } from "../helpers"
 
 import moireImage from "../images/moire-intro.png"
 import moireExample from "../images/moire-example.png"
+import { Container } from "../components/Container"
+
+const windowSize = require("@rehooks/window-size")
+
+export const isWindowDefined = () => typeof window !== undefined
+
+export function useWindowSize() {
+  let size
+
+  // Gatsby throws an error during the build if we remove this check since
+  // useWindowSize relies on `window` object and it is undefined in the server side
+  if (isWindowDefined) {
+    if (windowSize && typeof windowSize === "function") {
+      size = windowSize()
+    }
+  }
+
+  return {
+    isMobile: size && size.innerWidth <= 660,
+    viewportWidth: size && size.innerWidth,
+  }
+}
 
 const drawEllipse = (p5, props) => {
   for (let i = 0; i < p5.width; i += 20) {
@@ -81,3 +105,89 @@ function sketch(p5, props, el) {
 export const MoirePattern = createP5Sketch(sketch)
 
 export { moireImage, moireExample }
+
+export const Canvas = () => {
+  const [stroke, setStroke] = useState(255)
+  const [size, setSize] = useState(60)
+  const [strokeWeight, setStrokeWeight] = useState(2)
+
+  const handleStroke = values => setStroke(values.x)
+  const handleStrokeWeight = values => setStrokeWeight(values.x)
+  const handleSize = values => setSize(values.x)
+
+  const { isMobile, viewportWidth } = useWindowSize()
+
+  const canvasSize = isMobile ? (viewportWidth < 400 ? 280 : 320) : 500
+
+  return (
+    <Container className="pt-10 pb-10 grid gap-5 lg:grid-cols-2 grid-cols-1">
+      <MoirePattern
+        id="moire-pattern"
+        stroke={stroke}
+        size={size}
+        strokeWeight={strokeWeight}
+        height={canvasSize}
+        width={canvasSize}
+      />
+      <div className="self-center mx-auto lg:pt-1 md:pt-1 pt-10">
+        <div className="p-3">
+          <label>Stroke offset</label>
+          <div>
+            <span>
+              <i className="fas fa-minus" />
+            </span>
+            <Slider
+              className="mr-2 ml-2"
+              axis="x"
+              x={stroke}
+              onChange={handleStroke}
+              min="0"
+              max="255"
+            />
+            <span>
+              <i className="fas fa-plus" />
+            </span>
+          </div>
+        </div>
+        <div className="p-3">
+          <label>Circle size</label>
+          <div>
+            <span>
+              <i className="fas fa-minus" />
+            </span>
+            <Slider
+              className="mr-2 ml-2"
+              axis="x"
+              x={size}
+              onChange={handleSize}
+              min="20"
+              max="600"
+            />
+            <span>
+              <i className="fas fa-plus" />
+            </span>
+          </div>
+        </div>
+        <div className="p-3">
+          <label>Stroke weight</label>
+          <div>
+            <span>
+              <i className="fas fa-minus" />
+            </span>
+            <Slider
+              className="mr-2 ml-2"
+              axis="x"
+              x={strokeWeight}
+              onChange={handleStrokeWeight}
+              min="1"
+              max="20"
+            />
+            <span>
+              <i className="fas fa-plus" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </Container>
+  )
+}

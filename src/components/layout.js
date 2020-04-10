@@ -55,6 +55,7 @@ const mdxComponents = {
     </Heading>
   ),
   p: props => <Text>{props.children}</Text>,
+  ul: props => <ul className="list-disc pl-5">{props.children}</ul>,
 }
 
 const Layout = ({ children, showNavigation = true }) => (
@@ -72,7 +73,9 @@ const Layout = ({ children, showNavigation = true }) => (
       <MDXProvider components={mdxComponents}>
         <SEO />
         {showNavigation && <NavigationMenu />}
-        <main className="mt-10 overflow-auto">{children}</main>
+        <main className="mt-10 md:pt-0 lg:pt-0 pt-10 overflow-auto">
+          {children}
+        </main>
         <Container
           centerAlign
           className="lg:w-6/12 md:w-2/4 pt-10 pr-5 pl-5 sm:3/5"

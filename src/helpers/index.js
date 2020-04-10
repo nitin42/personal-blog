@@ -84,6 +84,7 @@ export const createP5Sketch = sketch =>
 
       return (
         <div
+          className="mx-auto"
           ref={wrapper => (this.wrapper = wrapper)}
           id={this.props.id}
           style={{
