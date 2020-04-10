@@ -72,7 +72,7 @@ const Layout = ({ children, showNavigation = true }) => (
       <MDXProvider components={mdxComponents}>
         <SEO />
         {showNavigation && <NavigationMenu />}
-        <main>{children}</main>
+        <main className="mt-10 overflow-auto">{children}</main>
         <Container
           centerAlign
           className="lg:w-6/12 md:w-2/4 pt-10 pr-5 pl-5 sm:3/5"

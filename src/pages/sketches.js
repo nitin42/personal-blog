@@ -7,6 +7,7 @@ import { Heading } from "../components/Heading"
 import Img from "gatsby-image"
 
 import { getArtworkBorderStyles } from "../helpers"
+import { Text } from "../components/Text"
 
 const Image = ({ imageData, borderStyles }) => (
   <Img fixed={imageData} alt="" style={{ ...borderStyles }} />
@@ -40,7 +41,6 @@ const Sketches = props => {
           >
             Sketches
           </Heading>
-          <i>Experiments and exploratory work</i>
         </FlexContainer>
         <Artworks items={artworks} />
       </Container>

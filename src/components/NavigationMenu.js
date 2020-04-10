@@ -5,10 +5,12 @@ import { Heading } from "./Heading"
 
 export const NavigationMenu = () => {
   return (
-    <>
-      <FlexContainer className="flex-wrap">
+    <header>
+      <FlexContainer className="flex-wrap border-b border-gray-200 bg-white fixed top-0 inset-x-0 h-16 z-50">
         <div className="pl-5 pt-1 pr-5 mx-auto">
-          <Heading>Form meets code</Heading>
+          <Heading disableDefaultSize className="text-3xl">
+            Form meets code
+          </Heading>
         </div>
         <nav className="pt-2 self-center flex-grow">
           <ul className="flex lg:justify-end justify-center">
@@ -35,7 +37,6 @@ export const NavigationMenu = () => {
           </ul>
         </nav>
       </FlexContainer>
-      <div className="mt-4 bg-gray-800 w-full" style={{ height: "2px" }} />
-    </>
+    </header>
   )
 }
