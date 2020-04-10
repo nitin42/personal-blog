@@ -33,15 +33,6 @@ const Sketches = props => {
         centerAlign
         className="pt-10 grid grid-auto-fit gap-5 justify-center items-center"
       >
-        <FlexContainer direction="column" centerAlign>
-          <Heading
-            disableDefaultSize
-            level="h2"
-            className="lg:text-5xl md:text-3xl text-3xl"
-          >
-            Sketches
-          </Heading>
-        </FlexContainer>
         <Artworks items={artworks} />
       </Container>
     </Layout>

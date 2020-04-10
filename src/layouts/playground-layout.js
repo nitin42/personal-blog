@@ -13,7 +13,7 @@ export default ({ children, data }) => {
         className="grid gap-10 lg:grid-cols-playg-content md:grid-cols-playg-content sm:grid-cols-1 justify-center"
       >
         <Container className="p-5 md:p-2 lg:p-0">{children}</Container>
-        <div className="bg-gray-200" style={{ width: "2.5px" }} />
+        <div className="bg-gray-200" style={{ width: "2px" }} />
         <TableOfContents contents={contents} pageTitle={data.file.name} />
       </Container>
     </Layout>

@@ -13,6 +13,16 @@ body {
   font-family: "Open Sans", Fallback, sans-serif;
 }
 
+.gradient-orange-red {
+  background-image: linear-gradient(
+    to right,
+    rgb(247, 201, 173) 0%,
+    rgb(229, 123, 185) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .grid-auto-fit {
   grid-template-columns: repeat(auto-fit, 300px);
 }

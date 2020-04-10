@@ -8,7 +8,7 @@ export const NavigationMenu = () => {
     <header>
       <FlexContainer className="flex-wrap border-b border-gray-200 bg-white fixed top-0 inset-x-0 h-16 z-50">
         <div className="pl-5 pt-1 pr-5 mx-auto">
-          <Heading disableDefaultSize className="text-3xl">
+          <Heading disableDefaultSize className="text-4xl">
             Form meets code
           </Heading>
         </div>
