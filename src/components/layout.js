@@ -6,7 +6,7 @@ import SEO from "./seo"
 
 import "../styles/index.css"
 
-import { Container } from "./Container"
+import { Container, FlexContainer } from "./Container"
 import { Heading } from "./Heading"
 import { Text } from "./Text"
 import { Footer } from "./Footer"
@@ -16,6 +16,7 @@ import { Card } from "./Card"
 
 const mdxComponents = {
   Container,
+  FlexContainer,
   Heading,
   Text,
   GatsbyLink,
@@ -37,6 +38,17 @@ const mdxComponents = {
       className="text-3xl"
       id={props.id}
       level="h2"
+      style={{ position: "relative" }}
+    >
+      {props.children}
+    </Heading>
+  ),
+  h3: props => (
+    <Heading
+      disableDefaultSize
+      className="text-2xl"
+      id={props.id}
+      level="h3"
       style={{ position: "relative" }}
     >
       {props.children}

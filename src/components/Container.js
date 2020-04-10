@@ -6,12 +6,17 @@ export const Container = ({ children, centerAlign, className = "" }) => (
   </div>
 )
 
-export const FlexContainer = ({ children, direction, centerAlign }) => (
+export const FlexContainer = ({
+  className = "",
+  children,
+  direction,
+  centerAlign,
+}) => (
   <Container
     centerAlign
     className={`flex ${
       direction === "column" ? "flex-col" : "flex-row"
-    } ${centerAlign && "justify-center items-center"}`}
+    } ${centerAlign && "justify-center items-center"} ${className}`}
   >
     {children}
   </Container>

@@ -1,5 +1,8 @@
 import { createP5Sketch } from "../helpers"
 
+import moireImage from "../images/moire-intro.png"
+import moireExample from "../images/moire-example.png"
+
 const drawEllipse = (p5, props) => {
   for (let i = 0; i < p5.width; i += 20) {
     p5.stroke((i * props.stroke) / 100)
@@ -76,3 +79,5 @@ function sketch(p5, props, el) {
 }
 
 export const MoirePattern = createP5Sketch(sketch)
+
+export { moireImage, moireExample }

@@ -4,48 +4,35 @@ title: Moire pattern
 
 import PlaygroundLayout from "../../layouts/playground-layout"
 
-import { MoirePattern } from "../../artworks/moire"
+import { MoirePattern, moireImage, moireExample } from "../../artworks/moire"
 
 export default PlaygroundLayout
 
 <div class="pt-5 pb-5">
   <Heading level="h2" className="text-center text-5xl" disableDefaultSize>
-    Moire pattern
+    Moiré pattern
   </Heading>
 </div>
 
-## Introduction
+## What is Moiré pattern?
 
-Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
+Moiré pattern is a geometrical design which is produced when a set of lines or a pattern is overlaid onto an another set.
 
-Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
-overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
+<FlexContainer centerAlign className="pt-5 pb-5">
+  <img src={moireImage} alt="" />
+</FlexContainer>
 
-## Examples
+A good example of the Moiré pattern is the stripes appearing in an image taken using a digital camera. When an image sensor's pattern matches the pattern of the image subject, it produces a moire.
 
-Moiré pattern is a geometrical design which is produced when a set of lines or pattern is overlaid onto an another set.
+<FlexContainer centerAlign className="pt-5 pb-5">
+  <img src={moireExample} alt="" />
+</FlexContainer>
 
-Below is an interactive canvas that shows four instances of <Link to="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</Link>
-overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
+## Using Moiré to create custom pattern
 
-## Interactive canvas
+Below is an interactive canvas that shows four instances of concentric circles overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
 
-Below is an interactive canvas that shows four instances of <a className="info-link" href="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</a> overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
-
-<div className="pt-8 p-5">
-  <MoirePattern
-    id="moire-pattern"
-    stroke={255}
-    size={6}
-    strokeWeight={1}
-    height={400}
-    width={400}
-  />
-</div>
-
-## Properties
-
-## Resources
+Try changing the values and hover over the canvas. Moving the cursor on the canvas either in horizontal or vertical direction will produce a different image.
 
 export const pageQuery = graphql`
   {

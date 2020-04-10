@@ -1,5 +1,10 @@
 import React from "react"
-import p5 from "p5/lib/p5.min" // loads the correct minified 388KB file!
+
+let p5
+
+if (typeof window !== "undefined") {
+  p5 = require("p5/lib/p5.min")
+}
 
 export const random = (max, min) =>
   Math.floor(Math.random() * (max - min) + min)
