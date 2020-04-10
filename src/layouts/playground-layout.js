@@ -14,7 +14,9 @@ export default ({ children, data }) => {
       >
         <Container className="p-5 md:p-2 lg:p-0">{children}</Container>
         <div className="bg-gray-200" style={{ width: "2px" }} />
-        <TableOfContents contents={contents} pageTitle={data.file.name} />
+        <div className="lg:block md:block hidden">
+          <TableOfContents contents={contents} pageTitle={data.file.name} />
+        </div>
       </Container>
     </Layout>
   )

@@ -6,19 +6,17 @@ import moireImage from "../images/moire-intro.png"
 import moireExample from "../images/moire-example.png"
 import { Container } from "../components/Container"
 
-const windowSize = require("@rehooks/window-size")
-
 export const isWindowDefined = () => typeof window !== undefined
 
 export function useWindowSize() {
   let size
+  let windowSize
 
   // Gatsby throws an error during the build if we remove this check since
   // useWindowSize relies on `window` object and it is undefined in the server side
-  if (isWindowDefined) {
-    if (windowSize && typeof windowSize === "function") {
-      size = windowSize()
-    }
+  if (typeof window !== "undefined") {
+    windowSize = require("@rehooks/window-size")
+    size = windowSize()
   }
 
   return {
