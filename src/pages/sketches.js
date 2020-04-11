@@ -31,7 +31,7 @@ const Sketches = props => {
     <Layout>
       <Container
         centerAlign
-        className="pt-10 grid grid-auto-fit gap-5 justify-center items-center"
+        className="mt-10 pt-10 grid grid-auto-fit gap-5 justify-center items-center"
       >
         <Artworks items={artworks} />
       </Container>
