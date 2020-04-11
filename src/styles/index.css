@@ -5,12 +5,27 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Open Sans";
-  src: url("OpenSans-Regular.ttf");
+  font-family: "Source Sans Pro";
+  src: url("SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Source Sans Pro Black";
+  src: url("SourceSansPro-Black.ttf");
 }
 
 body {
-  font-family: "Open Sans", Fallback, sans-serif;
+  font-family: "Source Sans Pro", Fallback, sans-serif;
+}
+
+p {
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Source Sans Pro Black", Fallback, sans-serif;
 }
 
 .gradient-orange-red {
@@ -63,16 +78,6 @@ h3 .anchor svg {
   padding-right: 4px;
 }
 
-@media (min-width: 640px) {
-  /* ... */
-}
-
-/* Medium (md) */
-@media (min-width: 768px) {
-  /* ... */
-}
-
-/* Large (lg) */
-@media (min-width: 1024px) {
-  /* ... */
+.active-nav-link {
+  color: #000 !important;
 }

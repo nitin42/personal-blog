@@ -12,7 +12,7 @@ export default ({ children, data }) => {
         centerAlign
         className="grid gap-10 lg:grid-cols-playg-content md:grid-cols-playg-content sm:grid-cols-1 justify-center"
       >
-        <Container className="p-5 md:p-2 lg:p-0">{children}</Container>
+        <Container className="p-5">{children}</Container>
         <div className="bg-gray-200" style={{ width: "2px" }} />
         <div className="lg:block md:block hidden">
           <TableOfContents contents={contents} pageTitle={data.file.name} />

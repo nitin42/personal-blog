@@ -5,7 +5,7 @@ import { Link as GatsbyLink } from "gatsby"
 export const Link = ({
   children,
   to,
-  className,
+  className = "",
   renderGatsbyLink,
   externalLink,
   partiallyActive,
@@ -23,7 +23,7 @@ export const Link = ({
         className={linkStyles}
         to={to}
         partiallyActive={partiallyActive}
-        activeClassName="text-blue-400"
+        activeClassName="active-nav-link"
         {...(externalLink ? { ...externalLinkAttributes } : null)}
       >
         {children}

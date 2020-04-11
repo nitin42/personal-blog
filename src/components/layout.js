@@ -28,7 +28,12 @@ const mdxComponents = {
     </Link>
   ),
   h1: props => (
-    <Heading id={props.id} level="h1" style={{ position: "relative" }}>
+    <Heading
+      id={props.id}
+      level="h1"
+      className="font-black"
+      style={{ position: "relative" }}
+    >
       {props.children}
     </Heading>
   ),
@@ -73,7 +78,7 @@ const Layout = ({ children, showNavigation = true }) => (
       <MDXProvider components={mdxComponents}>
         <SEO />
         {showNavigation && <NavigationMenu />}
-        <main className="mt-10 md:pt-0 lg:pt-0 pt-10 overflow-auto">
+        <main className="mt-10 md:pt-0 lg:pt-0 pt-10 pl-2 pr-2 overflow-auto">
           {children}
         </main>
         <Container
