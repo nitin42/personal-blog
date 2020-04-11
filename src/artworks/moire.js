@@ -88,6 +88,7 @@ export { moireImage, moireExample }
 const CANVAS_SIZE = {
   desktop: 420,
   mobile: 320,
+  middle: 360,
 }
 
 export const Canvas = () => {
@@ -101,6 +102,8 @@ export const Canvas = () => {
     ? viewportWidth < 400
       ? 280
       : CANVAS_SIZE.mobile
+    : viewportWidth > 400 && viewportWidth < 1200
+    ? CANVAS_SIZE.middle
     : CANVAS_SIZE.desktop
 
   return (
