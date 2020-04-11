@@ -2,12 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import { Container, FlexContainer } from "../components/Container"
-import { Heading } from "../components/Heading"
+import { Container } from "../components/Container"
 import Img from "gatsby-image"
 
 import { getArtworkBorderStyles } from "../helpers"
-import { Text } from "../components/Text"
 
 const Image = ({ imageData, borderStyles }) => (
   <Img fixed={imageData} alt="" style={{ ...borderStyles }} />

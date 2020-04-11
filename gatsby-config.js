@@ -14,6 +14,13 @@ module.exports = {
           {
             resolve: "gatsby-remark-autolink-headers",
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true,
+            },
+          },
         ],
       },
     },
@@ -28,8 +35,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `playground`,
-        path: `${__dirname}/src/pages/playground`,
+        name: `blog`,
+        path: `${__dirname}/src/pages/blog`,
       },
     },
     `gatsby-transformer-sharp`,

@@ -37,11 +37,11 @@ export const NavigationMenu = () => {
             <li className="pr-4">
               <Link
                 className="text-lg no-underline text-gray-500 hover:text-black"
-                to="/playground"
+                to="/blog"
                 renderGatsbyLink
                 partiallyActive={true}
               >
-                Playground
+                Blog
               </Link>
             </li>
           </ul>

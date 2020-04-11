@@ -1,7 +1,7 @@
 import React from "react"
 import { Container } from "../components/Container"
-import { Link } from "gatsby"
 import { Heading } from "../components/Heading"
+import { Link } from "./Link"
 
 export const TableOfContents = ({ pageTitle, contents }) => (
   <Container className="pt-10">
@@ -14,7 +14,11 @@ export const TableOfContents = ({ pageTitle, contents }) => (
           .filter(content => content.depth !== 1)
           .map(content => (
             <li className="pt-1 pb-1" key={content.title}>
-              <Link to={`/playground/${pageTitle}${content.url}`}>
+              <Link
+                className="hover:text-black"
+                to={`/blog/${pageTitle}${content.url}`}
+                renderGatsbyLink
+              >
                 {content.title}
               </Link>
             </li>

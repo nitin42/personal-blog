@@ -1,29 +1,10 @@
 import React, { useState } from "react"
 import Slider from "react-input-slider"
-import { createP5Sketch } from "../helpers"
+import { createP5Sketch, useWindowSize } from "../helpers"
 
 import moireImage from "../images/moire-intro.png"
 import moireExample from "../images/moire-example.png"
 import { Container } from "../components/Container"
-
-export const isWindowDefined = () => typeof window !== undefined
-
-export function useWindowSize() {
-  let size
-  let windowSize
-
-  // Gatsby throws an error during the build if we remove this check since
-  // useWindowSize relies on `window` object and it is undefined in the server side
-  if (typeof window !== "undefined") {
-    windowSize = require("@rehooks/window-size")
-    size = windowSize()
-  }
-
-  return {
-    isMobile: size && size.innerWidth <= 660,
-    viewportWidth: size && size.innerWidth,
-  }
-}
 
 const drawEllipse = (p5, props) => {
   for (let i = 0; i < p5.width; i += 20) {
@@ -104,18 +85,23 @@ export const MoirePattern = createP5Sketch(sketch)
 
 export { moireImage, moireExample }
 
+const CANVAS_SIZE = {
+  desktop: 420,
+  mobile: 320,
+}
+
 export const Canvas = () => {
   const [stroke, setStroke] = useState(255)
   const [size, setSize] = useState(60)
   const [strokeWeight, setStrokeWeight] = useState(2)
 
-  const handleStroke = values => setStroke(values.x)
-  const handleStrokeWeight = values => setStrokeWeight(values.x)
-  const handleSize = values => setSize(values.x)
-
   const { isMobile, viewportWidth } = useWindowSize()
 
-  const canvasSize = isMobile ? (viewportWidth < 400 ? 280 : 320) : 420
+  const canvasSize = isMobile
+    ? viewportWidth < 400
+      ? 280
+      : CANVAS_SIZE.mobile
+    : CANVAS_SIZE.desktop
 
   return (
     <Container className="pt-10 pb-10 grid gap-10 lg:grid-cols-2 grid-cols-1">
@@ -138,7 +124,7 @@ export const Canvas = () => {
               className="mr-2 ml-2"
               axis="x"
               x={stroke}
-              onChange={handleStroke}
+              onChange={({ x }) => setStroke(x)}
               min="0"
               max="255"
             />
@@ -157,7 +143,7 @@ export const Canvas = () => {
               className="mr-2 ml-2"
               axis="x"
               x={size}
-              onChange={handleSize}
+              onChange={({ x }) => setSize(x)}
               min="20"
               max="600"
             />
@@ -176,7 +162,7 @@ export const Canvas = () => {
               className="mr-2 ml-2"
               axis="x"
               x={strokeWeight}
-              onChange={handleStrokeWeight}
+              onChange={({ x }) => setStrokeWeight(x)}
               min="1"
               max="20"
             />

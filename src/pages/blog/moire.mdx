@@ -4,11 +4,11 @@ title: Moire pattern
 
 import Slider from "react-input-slider"
 
-import PlaygroundLayout from "../../layouts/playground-layout"
+import BlogLayout from "../../layouts/blog-layout"
 
 import { Canvas, moireImage, moireExample } from "../../artworks/moire"
 
-export default PlaygroundLayout
+export default BlogLayout
 
 <div class="pt-10 pb-5">
   <Heading
@@ -25,13 +25,19 @@ export default PlaygroundLayout
 Moiré pattern is a geometrical design which is produced when a set of lines or a pattern is overlaid onto an another set.
 
 <FlexContainer centerAlign className="pt-5 pb-5">
-  <img src={moireImage} alt="" />
+  <img
+    src={moireImage}
+    alt="An image describing how moire pattern is formed."
+  />
 </FlexContainer>
 
 A good example of the Moiré pattern is the stripes appearing in an image taken using a digital camera. When an image sensor's pattern matches the pattern of the image subject, it produces a moire.
 
 <FlexContainer centerAlign className="pt-5 pb-5">
-  <img src={moireExample} alt="" />
+  <img
+    src={moireExample}
+    alt="An image decribing how a moire pattern looks like"
+  />
 </FlexContainer>
 
 ## Creating custom patterns using Moiré
@@ -58,7 +64,7 @@ The above canvas renders the image using these three properties:
 
 export const pageQuery = graphql`
   {
-    file(sourceInstanceName: { eq: "playground" }, name: { eq: "moire" }) {
+    file(sourceInstanceName: { eq: "blog" }, name: { eq: "moire" }) {
       name
       childMdx {
         tableOfContents
