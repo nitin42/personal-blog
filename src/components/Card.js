@@ -1,7 +1,7 @@
 import React from "react"
 
 export const Card = ({ imageUrl, heading, description }) => (
-  <div className="mt-10 max-w-md rounded overflow-hidden shadow-lg cursor-pointer transition duration-150 ease-in-out transform scale-90 hover:scale-95">
+  <div className="mt-10 max-w-xs rounded overflow-hidden shadow-lg cursor-pointer transition duration-150 ease-in-out transform scale-90 hover:scale-95">
     <img className="w-full" alt="" src={imageUrl} />
     <div className="w-full bg-black" style={{ height: "2px" }} />
     <div className="px-6 py-4">
