@@ -115,10 +115,10 @@ export const Canvas = () => {
 
   const { isMobile, viewportWidth } = useWindowSize()
 
-  const canvasSize = isMobile ? (viewportWidth < 400 ? 280 : 320) : 500
+  const canvasSize = isMobile ? (viewportWidth < 400 ? 280 : 320) : 420
 
   return (
-    <Container className="pt-10 pb-10 grid gap-5 lg:grid-cols-2 grid-cols-1">
+    <Container className="pt-10 pb-10 grid gap-10 lg:grid-cols-2 grid-cols-1">
       <MoirePattern
         id="moire-pattern"
         stroke={stroke}
