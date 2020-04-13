@@ -44,7 +44,7 @@ A good example of the Moiré pattern is the stripes appearing in an image taken 
 
 ## Creating custom patterns using Moiré
 
-Using Moiré, we can create custom patterns by controlling how two patterns / shapes overlay onto each other.
+Using Moiré, we can create custom images by controlling how two patterns / shapes overlay onto each other.
 
 Below is an interactive canvas that shows four instances of <ExternalLink href="http://mathworld.wolfram.com/ConcentricCircles.html">concentric circles</ExternalLink> overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
 
@@ -77,9 +77,19 @@ The above canvas renders the image using these three properties:
 
 - Stroke weight offset - This property sets the stroke weight for each circle
 
-Play around with the different combination of values to produce different images. You can also save the rendered output
-as an image by pressing the <strong>"s"</strong> key.
-
+<UtilProvider>
+  {data => {
+    if (!data.isMobile) {
+      return (
+        <Text>
+          Play around with the different combination of values to produce
+          different images. You can also save the rendered output as an image by
+          pressing the <strong>"s"</strong> key.
+        </Text>
+      )
+    }
+  }}
+</UtilProvider>
 <div className="mt-10 text-xl">Thanks for reading!</div>
 
 export const pageQuery = graphql`

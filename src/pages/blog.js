@@ -16,8 +16,8 @@ export default () => {
         <GatsbyLink to="/blog/moire" className="mx-auto">
           <Card
             imageUrl={moireImage}
-            heading="Moire pattern"
-            description="What is Moiré and how it can be used to create custom patterns."
+            heading="Moiré pattern"
+            description="What is Moiré pattern and how it can be used to create custom images."
           />
         </GatsbyLink>
       </Container>
