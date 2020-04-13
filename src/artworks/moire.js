@@ -105,6 +105,12 @@ const CANVAS_SIZE = {
   middle: 360,
 }
 
+const isNarrowViewport = () => {
+  if (typeof window !== "undefined") {
+    return window.innerWidth < 640
+  }
+}
+
 export const Canvas = () => {
   const [stroke, setStroke] = useState(255)
   const [size, setSize] = useState(60)
@@ -142,7 +148,7 @@ export const Canvas = () => {
   }, [isMobile])
 
   const canvasSize =
-    isMobile || window.innerWidth < 640
+    isMobile || isNarrowViewport()
       ? viewportWidth < 400
         ? 280
         : CANVAS_SIZE.mobile
