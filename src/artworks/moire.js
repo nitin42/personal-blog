@@ -141,13 +141,14 @@ export const Canvas = () => {
     }
   }, [isMobile])
 
-  const canvasSize = isMobile
-    ? viewportWidth < 400
-      ? 280
-      : CANVAS_SIZE.mobile
-    : viewportWidth > 400 && viewportWidth < 1200
-    ? CANVAS_SIZE.middle
-    : CANVAS_SIZE.desktop
+  const canvasSize =
+    isMobile || window.innerWidth < 640
+      ? viewportWidth < 400
+        ? 280
+        : CANVAS_SIZE.mobile
+      : viewportWidth > 400 && viewportWidth < 1200
+      ? CANVAS_SIZE.middle
+      : CANVAS_SIZE.desktop
 
   return (
     <Container className="pt-10 pb-10 grid gap-10 lg:grid-cols-2 grid-cols-1">
