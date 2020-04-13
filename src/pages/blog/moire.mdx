@@ -78,17 +78,15 @@ The above canvas renders the image using these three properties:
 - Stroke weight offset - This property sets the stroke weight for each circle
 
 <UtilProvider>
-  {data => {
-    if (!data.isMobile) {
-      return (
-        <Text>
-          Play around with the different combination of values to produce
-          different images. You can also save the rendered output as an image by
-          pressing the <strong>"s"</strong> key.
-        </Text>
-      )
-    }
-  }}
+  {data =>
+    !data.isMobile ? (
+      <Text>
+        Play around with the different combination of values to produce
+        different images. You can also save the rendered output as an image by
+        pressing the <strong>"s"</strong> key.
+      </Text>
+    ) : null
+  }
 </UtilProvider>
 <div className="mt-10 text-xl">Thanks for reading!</div>
 
