@@ -13,6 +13,7 @@ import { Footer } from "./Footer"
 import { Link } from "./Link"
 import { NavigationMenu } from "./NavigationMenu"
 import { Card } from "./Card"
+import { useWindowSize } from "../helpers"
 
 const mdxComponents = {
   Container,
@@ -59,6 +60,11 @@ const mdxComponents = {
       {props.children}
     </Heading>
   ),
+  UtilProvider: ({ children }) => {
+    const data = useWindowSize()
+
+    return children(data)
+  },
   p: props => <Text>{props.children}</Text>,
   ul: props => <ul className="list-disc pl-5">{props.children}</ul>,
 }

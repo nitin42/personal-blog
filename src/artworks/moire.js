@@ -1,10 +1,16 @@
 import React, { useState } from "react"
 import Slider from "react-input-slider"
 import { createP5Sketch, useWindowSize } from "../helpers"
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock"
 
 import moireImage from "../images/moire-intro.png"
 import moireExample from "../images/moire-example.png"
 import { Container } from "../components/Container"
+import { useRef } from "react"
 
 const drawEllipse = (p5, props) => {
   for (let i = 0; i < p5.width; i += 20) {
@@ -29,12 +35,14 @@ export const constraintMousePoints = (p5, callback, offset = 0) => {
 }
 
 function sketch(p5, props, el) {
+  let canvas
+
   p5.setup = function() {
     p5.noFill()
   }
 
   p5.draw = function() {
-    p5.createCanvas(props.width, props.height)
+    canvas = p5.createCanvas(props.width, props.height)
 
     p5.background(255)
 
@@ -79,6 +87,12 @@ function sketch(p5, props, el) {
   p5.windowResized = function() {
     p5.resizeCanvas(300, 300)
   }
+
+  p5.keyTyped = function() {
+    if (p5.key === "s") {
+      p5.saveCanvas(canvas, "Moire-pattern", "png")
+    }
+  }
 }
 
 export const MoirePattern = createP5Sketch(sketch)
@@ -98,6 +112,35 @@ export const Canvas = () => {
 
   const { isMobile, viewportWidth } = useWindowSize()
 
+  const targetElRef = useRef(null)
+  const targetEl = useRef(null)
+
+  React.useEffect(() => {
+    targetEl.current = targetElRef.current
+
+    if (isMobile) {
+      targetEl.current.addEventListener("touchstart", () => {
+        disableBodyScroll(targetEl.current)
+      })
+
+      targetEl.current.addEventListener("touchend", () => {
+        enableBodyScroll(targetEl.current)
+      })
+    }
+
+    return () => {
+      clearAllBodyScrollLocks()
+
+      targetEl.current.removeEventListener("touchstart", () => {
+        disableBodyScroll(targetEl.current)
+      })
+
+      targetEl.current.removeEventListener("touchend", () => {
+        enableBodyScroll(targetEl.current)
+      })
+    }
+  }, [isMobile])
+
   const canvasSize = isMobile
     ? viewportWidth < 400
       ? 280
@@ -108,14 +151,16 @@ export const Canvas = () => {
 
   return (
     <Container className="pt-10 pb-10 grid gap-10 lg:grid-cols-2 grid-cols-1">
-      <MoirePattern
-        id="moire-pattern"
-        stroke={stroke}
-        size={size}
-        strokeWeight={strokeWeight}
-        height={canvasSize}
-        width={canvasSize}
-      />
+      <div ref={targetElRef}>
+        <MoirePattern
+          id="moire-pattern"
+          stroke={stroke}
+          size={size}
+          strokeWeight={strokeWeight}
+          height={canvasSize}
+          width={canvasSize}
+        />
+      </div>
       <div className="self-center mx-auto lg:pt-1 md:pt-1 pt-10">
         <div className="p-3">
           <label>Stroke offset</label>

@@ -4,13 +4,15 @@ title: Moire pattern
 
 import Slider from "react-input-slider"
 
+import useWindowSize from "../../helpers"
+
 import BlogLayout from "../../layouts/blog-layout"
 
 import { Canvas, moireImage, moireExample } from "../../artworks/moire"
 
 export default BlogLayout
 
-<div class="pt-10 pb-5">
+<div class="pt-10">
   <Heading
     level="h2"
     className="md:text-6xl lg:text-6xl text-5xl"
@@ -19,6 +21,8 @@ export default BlogLayout
     Moiré pattern
   </Heading>
 </div>
+
+This blog post is about Moiré pattern and how it can be used to create custom patterns.
 
 ## Introduction
 
@@ -46,8 +50,23 @@ Using Moiré, we can create custom patterns by controlling how two patterns / sh
 
 Below is an interactive canvas that shows four instances of concentric circles overlaid onto each other. Alongside, there is a list of properties that determine how all the circles are rendered when their values are changed.
 
-Try changing the values and hover over the canvas. Moving the cursor on the canvas either in horizontal or vertical direction will produce a different image.
-
+<UtilProvider>
+  {data => {
+    return data.isMobile ? (
+      <Text>
+        Try changing the values and drag the circles rendered on the canvas.
+        Dragging the circles either in horizontal or vertical direction will
+        produce a different image.
+      </Text>
+    ) : (
+      <Text>
+        Try changing the values and hover over the canvas. Moving the cursor on
+        the canvas either in horizontal or vertical direction will produce a
+        different image.
+      </Text>
+    )
+  }}
+</UtilProvider>
 <Canvas />
 
 ## Properties
