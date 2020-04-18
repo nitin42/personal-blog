@@ -18,12 +18,10 @@ function SEO() {
     `
   )
 
-  const netl = `https://formmeetscode.in/.netlify/functions/strava`
+  const netl = `https://5e9acc4284a1420006309d23--hardcore-booth-b9fd74.netlify.app/.netlify/functions/strava`
 
   useEffect(() => {
-    fetch(netl)
-      .then(res => res.text())
-      .then(response => console.log(response))
+    fetch(netl, { mode: "cors" }).then(response => console.log(response))
   })
 
   return (
