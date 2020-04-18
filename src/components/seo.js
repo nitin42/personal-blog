@@ -21,7 +21,9 @@ function SEO() {
   const netl = `https://formmeetscode.in/.netlify/functions/strava`
 
   useEffect(() => {
-    fetch(netl).then(res => res.json())
+    fetch(netl)
+      .then(res => res.text())
+      .then(response => console.log(response))
   })
 
   return (
