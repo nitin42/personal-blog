@@ -10,11 +10,13 @@ exports.handler = async function(event, context, callback) {
 
   const stravaResponse = await fetch(STRAVA_ENDPOINT, { method: "POST" })
 
+  console.log(stravaResponse.json())
+
   callback(null, {
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
     statusCode: 200,
-    body: stravaResponse.json(),
+    body: stravaResponse,
   })
 }
