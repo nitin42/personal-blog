@@ -1,3 +1,5 @@
+import fetch from "node-fetch"
+
 exports.handler = async function(event, context, callback) {
   const CLIENT_ID = "42064"
   const CLIENT_SECRET = "db18a7a7ba701f727ae7a7443bc05e7cb6265715"
