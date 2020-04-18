@@ -9,7 +9,6 @@ const STRAVA_ENDPOINT = `https://www.strava.com/oauth/token?client_id=${CLIENT_I
 exports.handler = async (event, context, callback) => {
   return fetch(STRAVA_ENDPOINT, {
     method: "POST",
-    headers: { Accept: "application/json" },
   })
     .then(response => response.json())
     .then(
