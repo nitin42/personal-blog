@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -17,6 +17,14 @@ function SEO() {
       }
     `
   )
+
+  const netl = `/.netlify/netlify-functions/strava.js`
+
+  useEffect(() => {
+    fetch(netl)
+      .then(res => res.json())
+      .then(response => console.log(response))
+  })
 
   return (
     <Helmet
